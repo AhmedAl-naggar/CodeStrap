@@ -8,6 +8,13 @@
         <div class="col-12">
             <h1>Details for {{$customer->name }}</h1>
             <a href="/customers/{{$customer->id}}/edit">Edit</a>
+            .
+            <form action="/customers/{{$customer->id}}" method="POST">
+                @method('DELETE')
+                @csrf
+                <button type="submit" class="btn-danger">Delete</button>
+            </form>
+
             <p>
                 <strong>Name: </strong> {{$customer->name}}
             </p>

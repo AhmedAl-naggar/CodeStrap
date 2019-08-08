@@ -12,7 +12,7 @@
                 <a class="nav-link" href="/about-us">About Us</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/customer">Customer list</a>
+                <a class="nav-link" href="/customers">Customer list</a>
             </li>
         </ul>
     </div>

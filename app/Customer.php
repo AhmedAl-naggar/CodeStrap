@@ -6,14 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Customer extends Model
 {
-    //$fileable Example
-    //protected $fillable = ['name', 'email', 'active'];
-
     //Guarded Example
     protected $guarded = [];
 
     protected $attributes = [
-        active => 1,
+        'active' => 0
     ];
 
     public function getActiveAttribute($attribute)
@@ -42,6 +39,8 @@ class Customer extends Model
             [
                 '0' => 'Inactive',
                 '1' => 'Active',
+                '2' => 'In-progress',
+
             ];
     }
 

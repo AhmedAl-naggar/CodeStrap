@@ -5,15 +5,16 @@ namespace App\Http\Controllers;
 use App\Company;
 use App\Customer;
 
-class CustomerController extends Controller
+class CustomersController extends Controller
 {
     public function index()
     {
+
         $customers = Customer::all();
         return view('customers.index', compact('customers'));
     }
 
-    public function create(Customer $customer)
+    public function create()
     {
         $companies = Company::all();
         $customer = new Customer();
@@ -23,7 +24,7 @@ class CustomerController extends Controller
     public function store()
     {
         Customer::create($this->validateRequest());
-        return redirect('customer');
+        return redirect('customers');
     }
 
     public function show(Customer $customer)
@@ -37,12 +38,16 @@ class CustomerController extends Controller
         return view('customers.edit', compact("customer",'companies'));
     }
 
-
     public function update(Customer $customer)
     {
         $customer->update($this->validateRequest());
         return redirect('customers/' . $customer->id);
+    }
 
+    public function destroy(Customer $customer)
+    {
+        $customer->delete();
+        return redirect('customers');
     }
 
     private function validateRequest()
