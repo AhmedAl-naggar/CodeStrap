@@ -1,8 +1,13 @@
 <?php
 
 Route::view('/','pages.home');
-Route::view('about-us', "pages.about");
-Route::view('contact-us', "pages.contact");
+Route::view('about', "pages.about");
+
+Route::get('contact', 'ContactFormController@create');
+Route::post('contact', 'ContactFormController@store');
+
+//Route::view('contact', "pages.contact");
+
 /*
 Route::get('customers', 'CustomersController@index');
 Route::get('customers/create', 'CustomersController@create');
