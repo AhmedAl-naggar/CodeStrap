@@ -7,6 +7,15 @@ use App\Customer;
 
 class CustomersController extends Controller
 {
+
+    /**
+     * CustomersController constructor.
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
 
@@ -18,7 +27,7 @@ class CustomersController extends Controller
     {
         $companies = Company::all();
         $customer = new Customer();
-        return view('customers.create', compact('companies','customer'));
+        return view('customers.create', compact('companies', 'customer'));
     }
 
     public function store()
@@ -35,7 +44,7 @@ class CustomersController extends Controller
     public function edit(Customer $customer)
     {
         $companies = Company::all();
-        return view('customers.edit', compact("customer",'companies'));
+        return view('customers.edit', compact("customer", 'companies'));
     }
 
     public function update(Customer $customer)

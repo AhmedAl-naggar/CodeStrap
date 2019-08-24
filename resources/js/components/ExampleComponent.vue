@@ -1,16 +1,6 @@
 <template>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Example Component</div>
-
-                    <div class="card-body">
-                        I'm an example component.
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div>
+        <button type="submit" class="my-button">My Button</button>
     </div>
 </template>
 
@@ -21,3 +11,11 @@
         }
     }
 </script>
+
+<style>
+    .my-button {
+        background-color: #1d2124;
+        color: #ffffff;
+        padding: 10px 15px;
+    }
+</style>
